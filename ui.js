@@ -1,5 +1,3 @@
-
-
 let table = [
   {
     categorie: "SPORT",
@@ -68,7 +66,6 @@ Creearticle();
  
  function CreeElement( data = table) {
   const main = document.getElementById('cards');
-  main.innerHTML = '';
   for (let i = 0; i < data.length; i++) {
     const x = data[i];
 
