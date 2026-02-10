@@ -46,7 +46,8 @@ header.innerHTML =  `
 }Creeheader( )
 
 // -------------------------------------------------------------------------
-function Creearticle() {
+  // export default 
+  function  Creearticle() {
   const div = document.getElementById('challenge');
 
   div.innerHTML = `
@@ -69,12 +70,12 @@ function Creearticle() {
 
       <h1 class="text-center text-2xl font-bold mb-4">ADD TACHE</h1>
 
-      <input class="p-2 rounded w-full mb-2" placeholder="Categorie">
-      <input class="p-2 rounded w-full mb-2" placeholder="Temps">
-      <input class="p-2 rounded w-full mb-2" placeholder="Note">
-      <input class="p-2 rounded w-full mb-4" placeholder="Image URL">
+      <input id="Categorie" class="p-2 rounded w-full mb-2" placeholder="Categorie">
+      <input id="Temps" class="p-2 rounded w-full mb-2" placeholder="Temps">
+      <input id="Note"  class="p-2 rounded w-full mb-2" placeholder="Note">
+      <input id="Image"  class="p-2 rounded w-full mb-4" placeholder="Image URL">
       <div class="flex justify-between">
-        <button class="bg-blue-600 text-white px-4 py-2 rounded-[20px]">
+        <button id="Enregistrer" class="bg-blue-600 text-white px-4 py-2 rounded-[20px]">
           Enregistrer
         </button>
 
@@ -86,9 +87,9 @@ function Creearticle() {
     </div>
   </section>
   `;
-}Creearticle()
+  }
 
-Creearticle();
+
 
 
  // -------------------------------------------------------------------------
