@@ -1,5 +1,5 @@
 
-let table = [
+export let table = [
   {
     categorie: "SPORT",
     temps: "25 min",
@@ -11,34 +11,17 @@ let table = [
     temps: "40 min",
     titre: "JavaScript",
     image: "https://cdn-icons-png.flaticon.com/128/906/906175.png"
-  },
-  {
-    categorie: "STUDY",
-    temps: "40 min",
-    titre: "JavaScript",
-    image: "https://cdn-icons-png.flaticon.com/128/906/906175.png"
-  },
-  {
-    categorie: "SPORT",
-    temps: "30 min",
-    titre: "Yoga",
-    image: "https://cdn-icons-png.flaticon.com/128/2972/2972185.png"
-  },
-  {
-    categorie: "LEISURE",
-    temps: "1 h",
-    titre: "Lecture",
-    image: "https://cdn-icons-png.flaticon.com/128/2965/2965567.png"
   }
+ 
 ];
-
 export function creeLocal() {
   localStorage.setItem("array", JSON.stringify(table));
 }
 
 export function afficherLocal() {
   const data = JSON.parse(localStorage.getItem("array"));
-  return data || [];
+  if (data) {
+    table.length = 0;
+    table.push(...data);
+  }
 }
-
-creeLocal();

@@ -1,27 +1,37 @@
-let array = [];
+import { table, creeLocal, afficherLocal } from "./storage.js";
+import { Creearticle } from "./ui.js";
 
-const btn = document.getElementById("Enregistrer");
-const categorie = document.getElementById("Categorie");
-const temps = document.getElementById("Temps");
-const note = document.getElementById("Note");
-const image = document.getElementById("Image");
+document.addEventListener("cards", () => {
+  Creearticle();
 
-btn.addEventListener("click", () => {
-  let newtable = {
-    id: array.length + 1,
-    categorie: categorie.value,
-    temps: temps.value,
-    note: note.value,
-    image: image.value
-  };bf
+  const btn = document.getElementById("Enregistrer");
+  const categorie = document.getElementById("Categorie");
+  const temps = document.getElementById("Temps");
+  const note = document.getElementById("Note");
+  const image = document.getElementById("Image");
 
-  array.push(newtable);
+ 
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
 
-  console.log(array); 
-  alert("La tâche a été ajoutée ");
+    let newtable = {
+      id: table.length + 1,
+      categorie: categorie.value,
+      temps: temps.value,
+      note: note.value,
+      image: image.value,
+    };
 
-  categorie.value = "";
-  temps.value = "";
-  note.value = "";
-  image.value = "";
+    table.push(newtable);
+    creeLocal();
+
+    alert("La tâche a été ajoutée");
+
+    categorie.value = "";
+    temps.value = "";
+    note.value = "";
+    image.value = "";
+  });
 });
+
+
