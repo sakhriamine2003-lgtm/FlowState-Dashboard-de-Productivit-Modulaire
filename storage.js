@@ -1,4 +1,4 @@
-// جدول البيانات
+
 let table = [
   {
     categorie: "SPORT",

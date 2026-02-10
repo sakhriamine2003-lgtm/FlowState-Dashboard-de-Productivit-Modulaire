@@ -1,7 +1,3 @@
-import Creearticle from "./ui.js";
-
-Creearticle();
-
 let array = [];
 
 const btn = document.getElementById("Enregistrer");
@@ -17,7 +13,7 @@ btn.addEventListener("click", () => {
     temps: temps.value,
     note: note.value,
     image: image.value
-  };
+  };bf
 
   array.push(newtable);
 
