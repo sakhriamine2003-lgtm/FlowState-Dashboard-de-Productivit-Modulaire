@@ -1,3 +1,5 @@
+import afficherLocal from "./storage";
+
 let table = [
   {
     categorie: "SPORT",
@@ -48,9 +50,9 @@ header.innerHTML =  `
 // -------------------------------------------------------------------------
   // export default 
   function  Creearticle() {
-  const div = document.getElementById('challenge');
+  const article = document.getElementById('challenge');
 
-  div.innerHTML = `
+  article.innerHTML = `
   <div class="flex justify-between items-center w-full p-4">
     <h1 class="text-2xl font-bold">Daily challenges</h1>
 
@@ -89,43 +91,38 @@ header.innerHTML =  `
   `;
   }
 
-
+Creearticle();
 
 
  // -------------------------------------------------------------------------
+// import afficherLocal from "./storage.js";
 
- 
- function CreeElement( data) {
-  const main = document.getElementById('cards');
+// const data = JSON.parse(localStorage.getItem("array"));
+
+function CreeElement(data) {
+  const main = document.getElementById("cards");
+  
   for (let i = 0; i < data.length; i++) {
+    main.innerHTML += `
+      <section class="flex mt-8 items-center justify-between bg-[#2045EA] text-white p-4 rounded-[20px] mx-6">
+        <div>
+          <h2 class="font-bold text-lg">${data[i].categorie}</h2>
+          <p class="font-bold">Category</p>
+        </div>
 
- main.innerHTML += `  
+        <div class="text-center">
+          <p>${data[i].temps}</p>
+          <p>L'${data[i].titre}</p>
+        </div>
 
- <section class="flex mt-8 items-center justify-between bg-[#2045EA] text-white p-4 rounded-[20px] mx-6 " id="cards"> 
-
-  <div>
-    <h2 class="font-bold text-lg">${data[i].categorie}</h2>
-    <p class="font-bold">Category</p>
-  </div>
-
-  <div class="text-center">
-    <p >${data[i].temps}</p>
-    <p >:  L'${data[i].titre}</p>
-  </div>
-
-  <div>
-    <img
-      class="w-[50px]"
-      src=${data[i].image}
-      alt="sport icon"
-    />
-  </div>
- </section>
-
- 
- `}}
+        <div>
+          <img class="w-[50px]" src="${data[i].image}">
+        </div>
+      </section>
+    `;
+  }
+};
 CreeElement(table);
-
 
 
  function creeNav() {
