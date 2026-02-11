@@ -1,7 +1,7 @@
 import { table, creeLocal, afficherLocal } from "./storage.js";
-import { Creearticle } from "./ui.js";
+import { Creearticle, CreeElement } from "./ui.js";
 
-document.addEventListener("cards", () => {
+document.addEventListener("DOMContentLoaded", () => {
   Creearticle();
 
   const btn = document.getElementById("Enregistrer");
@@ -18,12 +18,13 @@ document.addEventListener("cards", () => {
       id: table.length + 1,
       categorie: categorie.value,
       temps: temps.value,
-      note: note.value,
+      titre: note.value,
       image: image.value,
     };
 
     table.push(newtable);
     creeLocal();
+    CreeElement(table); 
 
     alert("La tâche a été ajoutée");
 
@@ -33,5 +34,3 @@ document.addEventListener("cards", () => {
     image.value = "";
   });
 });
-
-
