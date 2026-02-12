@@ -101,7 +101,7 @@ export function CreeNav() {
   const nav = document.getElementById("nav");
 
   nav.innerHTML = `
-  <footer class="fixed bottom-0 left-0 w-full flex justify-between items-center text-center bg-[#70A9F9]/50 text-white font-bold rounded-t-3xl p-2">
+  <nav class="fixed bottom-0 left-0 w-full flex justify-between items-center text-center bg-[#70A9F9]/50 text-white font-bold rounded-t-3xl p-2">
 
     <div class="flex flex-col items-center hover:bg-[#0011FF]/50 duration-700 w-full rounded-full">
       <a href="#" class="flex flex-col items-center">
@@ -120,27 +120,48 @@ export function CreeNav() {
 
     <input type="checkbox" id="b" class="peer hidden">
 
-    <section class="hidden peer-checked:flex fixed inset-0 z-20 bg-black/50 justify-center items-center">
+<section class=" hidden peer-checked:flex fixed inset-0 z-20 bg-blue-100 flex flex-col items-center justify-center w-[500px] h-[500px] mx-auto">
 
-      <article class="bg-white rounded-2xl p-4 flex flex-col items-center gap-4">
+  <div class="mb-10">
+    <h1 class="text-3xl font-bold text-blue-900 flex items-center gap-2">
+      <span>🎯</span> FlowState
+    </h1>
+</div>
 
-        <button class="bg-[#2045EA] w-[150px] h-[50px] rounded-[20px] text-white font-bold">
-          SELECT TASK
-        </button>
+  <div class="bg-blue-200 p-8 rounded-xl shadow-lg flex flex-col items-center gap-6">
+    
+    <div class="bg-blue-300 px-4 py-2 rounded-full text-blue-900 ">
+      Pomodoro Timer
+    </div>
 
-        <div class="text-center">
-          <p id="timer" class="font-bold text-2xl">25:00</p>
-        </div>
+    <div class="text-6xl font-bold text-blue-900">
+      00:15:20
+    </div>
 
-        <label for="b"
-          class="bg-red-600 text-white px-4 py-2 rounded-xl cursor-pointer">
-          Close
-        </label>
+    <button class="border border-blue-700 text-blue-700 px-8 py-2 rounded-full ">
+      FOCUS
+    </button>
 
-      </article>
-    </section>
+    <div class="flex gap-4 mt-4">
+      <button class="bg-blue-500 text-white px-6 py-2 rounded-lg flex items-center gap-2">
+        ▶ START
+      </button>
+      <button class="bg-white border border-blue-500 text-blue-500 px-6 py-2 rounded-lg  flex items-center gap-2">
+        ⟳ RETURN
+      </button>
+    </div>
+  </div>
 
-  </footer>
+  <div class="mt-10 flex gap-6 text-blue-900 ">
+    <span>Tasks</span>
+    <span>Date</span>
+    <span>Settings</span>
+  </div>
+
+</section>
+
+
+  </nav>
   `;
 }
-CreeNav
+CreeNav()
