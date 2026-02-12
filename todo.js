@@ -1,36 +1,56 @@
-import { table, creeLocal, afficherLocal } from "./storage.js";
-import { Creearticle, CreeElement } from "./ui.js";
+
+import { creeLocal, afficherLocal } from "./storage.js";
+import { Creearticle, CreeElement, Creeheader } from "./ui.js";
+
+let table = afficherLocal(); 
 
 document.addEventListener("DOMContentLoaded", () => {
+  Creeheader();
   Creearticle();
+  CreeElement(table);
 
   const btn = document.getElementById("Enregistrer");
   const categorie = document.getElementById("Categorie");
   const temps = document.getElementById("Temps");
   const note = document.getElementById("Note");
-  const image = document.getElementById("Image");
 
- 
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    let newtable = {
-      id: table.length + 1,
+  btn.addEventListener("click", () => {
+    const newTask = {
+      id: Date.now(),  
       categorie: categorie.value,
       temps: temps.value,
       titre: note.value,
-      image: image.value,
+    
     };
 
-    table.push(newtable);
-    creeLocal();
-    CreeElement(table); 
+    table.push(newTask);
 
-    alert("La tâche a été ajoutée");
+    creeLocal(table);       
+    CreeElement(table);    
 
     categorie.value = "";
     temps.value = "";
     note.value = "";
-    image.value = "";
+
+    alert("La tâche a été ajoutée");
   });
+
+  function supprimer(id) {
+  table = table.filter(item => item.id !== id);
+  creeLocal(table);
+  CreeElement(table);
+  alert("Element supprimé");
+}
+
+
+ 
+document.getElementById("cards").addEventListener("click", function (e) {
+
+  if (e.target.classList.contains("delete-btn")) {
+    const id = Number(e.target.dataset.id);
+    supprimer(id);
+  }
+
+});
+
 });
