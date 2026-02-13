@@ -120,39 +120,45 @@ export function CreeNav() {
 
     <input type="checkbox" id="b" class="peer hidden">
 
-<section class=" hidden peer-checked:flex fixed inset-0 z-20 bg-blue-100 flex flex-col items-center justify-center w-[500px] h-[500px] mx-auto">
+<section class="hidden peer-checked:flex fixed inset-0 z-20 
+bg-blue-100 flex-col items-center justify-center 
+px-4 sm:px-6">
 
-  <div class="mb-10">
-    <h1 class="text-3xl font-bold text-blue-900 flex items-center gap-2">
+
+  <div class="mb-8 text-center">
+    <h1 class="text-2xl sm:text-3xl font-bold text-blue-900 flex items-center justify-center gap-2">
       <span>🎯</span> FlowState
     </h1>
-</div>
+  </div>
 
-  <div class="bg-blue-200 p-8 rounded-xl shadow-lg flex flex-col items-center gap-6">
+  <div class="w-full max-w-md bg-blue-200 p-6 sm:p-8 
+  rounded-2xl shadow-xl flex flex-col items-center gap-6">
     
-    <div class="bg-blue-300 px-4 py-2 rounded-full text-blue-900 ">
+    <div class="bg-blue-300 px-4 py-2 rounded-full text-blue-900 text-sm sm:text-base">
       Pomodoro Timer
     </div>
 
-    <div class="text-6xl font-bold text-blue-900">
-      00:15:20
+    <div id="time" class="text-4xl sm:text-6xl font-bold text-blue-900 text-center">
+      00:25:00
     </div>
 
-    <button class="border border-blue-700 text-blue-700 px-8 py-2 rounded-full ">
+    <button class="border border-blue-700 text-blue-700 
+    px-6 sm:px-8 py-2 rounded-full hover:bg-blue-700 hover:text-white transition">
       FOCUS
     </button>
 
-    <div class="flex gap-4 mt-4">
-      <button class="bg-blue-500 text-white px-6 py-2 rounded-lg flex items-center gap-2">
-        ▶ START
+    <div class="flex flex-col sm:flex-row gap-4 mt-4 w-full justify-center">
+      <button id="start" class="bg-blue-500 text-white px-6 py-2 rounded-lg flex items-center justify-center gap-2 w-full sm:w-auto">
+        ▶ stop
       </button>
-      <button class="bg-white border border-blue-500 text-blue-500 px-6 py-2 rounded-lg  flex items-center gap-2">
+
+      <button  id="return" class="bg-white border border-blue-500 text-blue-500 px-6 py-2 rounded-lg flex items-center justify-center gap-2 w-full sm:w-auto">
         ⟳ RETURN
       </button>
     </div>
   </div>
 
-  <div class="mt-10 flex gap-6 text-blue-900 ">
+  <div class="mt-8 flex flex-wrap justify-center gap-6 text-blue-900 text-sm sm:text-base">
     <span>Tasks</span>
     <span>Date</span>
     <span>Settings</span>
@@ -160,8 +166,6 @@ export function CreeNav() {
 
 </section>
 
-
-  </nav>
   `;
 }
 CreeNav()
