@@ -138,7 +138,7 @@ px-4 sm:px-6">
       Pomodoro Timer
     </div>
 
-    <div id="time" class="text-4xl sm:text-6xl font-bold text-blue-900 text-center">
+    <div id="timer" class="text-4xl sm:text-6xl font-bold text-blue-900 text-center">
       00:25:00
     </div>
 
@@ -148,11 +148,11 @@ px-4 sm:px-6">
     </button>
 
     <div class="flex flex-col sm:flex-row gap-4 mt-4 w-full justify-center">
-      <button id="start" class="bg-blue-500 text-white px-6 py-2 rounded-lg flex items-center justify-center gap-2 w-full sm:w-auto">
+      <button onclick="start()" class="bg-blue-500 text-white px-6 py-2 rounded-lg flex items-center justify-center gap-2 w-full sm:w-auto">
         ▶ stop
       </button>
 
-      <button  id="return" class="bg-white border border-blue-500 text-blue-500 px-6 py-2 rounded-lg flex items-center justify-center gap-2 w-full sm:w-auto">
+      <button onclick="reset()" class="bg-white border border-blue-500 text-blue-500 px-6 py-2 rounded-lg flex items-center justify-center gap-2 w-full sm:w-auto">
         ⟳ RETURN
       </button>
     </div>
